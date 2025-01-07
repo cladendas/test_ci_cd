@@ -8,10 +8,6 @@ on:
   pull_request:
     branches: [ "main" ]
 
-env:
-  # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
-  BUILD_TYPE: Release
-
 jobs:
   build:
     # The CMake configure and build commands are platform agnostic and should work equally well on Windows or Mac.
@@ -24,7 +20,6 @@ jobs:
         with:
           submodules: true
       - run: cmake --build .
-      - run: cmake --build . --target package
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
