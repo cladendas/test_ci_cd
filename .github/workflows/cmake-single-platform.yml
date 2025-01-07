@@ -16,6 +16,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+      - run: cmake .
       - run: cmake --build .
       - name: Create Release
         id: create_release
